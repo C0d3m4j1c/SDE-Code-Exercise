@@ -8,8 +8,8 @@ function calculateSuitabilityScore(shipment: Shipment, driver: Driver): number {
 
   const baseSuitabilityScore =
     shipmentNameLength % 2 === 0
-      ? driver.name.match(/[aeiou]/gi)?.length || 0 * 1.5
-      : driver.name.match(/[bcdfghjklmnpqrstvwxyz]/gi)?.length || 0;
+      ? driver.name.toLowerCase().match(/[aeiou]/gi)?.length || 0 * 1.5
+      : driver.name.toLowerCase().match(/[bcdfghjklmnpqrstvwxyz]/gi)?.length || 0;
 
   const suitabilityScore = hasCommonFactors(
     shipmentNameLength,
